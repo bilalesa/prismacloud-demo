@@ -134,6 +134,19 @@ resource "aws_s3_bucket" "frontend" {
   }
 }
 
+
+resource "aws_s3_bucket" "frontend_log_bucket" {
+  bucket = "frontend-log-bucket"
+}
+
+resource "aws_s3_bucket_logging" "frontend" {
+  bucket = aws_s3_bucket.frontend.id
+
+  target_bucket = aws_s3_bucket.frontend_log_bucket.id
+  target_prefix = "log/"
+}
+
+
 # Allow CF OAI to access bucket
 resource "aws_s3_bucket_policy" "frontend" {
   bucket = aws_s3_bucket.frontend.id
