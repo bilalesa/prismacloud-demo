@@ -105,34 +105,6 @@ resource "aws_route53_record" "website-cloudfront-staging" {
 
 # Frontend stuff
 
-resource "aws_s3_bucket" "frontend" {
-  bucket = "snfisonfwnoi32joi12"
-  acl    = "private"
-
-  versioning {
-    enabled = false
-  }
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
-  tags = {
-    Name = "frontend"
-    Terraform = "true"
-  }
-
-  region = "us-east-1"
-
-  # TF metadata
-  lifecycle {
-    prevent_destroy = true
-  }
-}
 
 # Allow CF OAI to access bucket
 resource "aws_s3_bucket_policy" "frontend" {
