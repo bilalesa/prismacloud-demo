@@ -25,7 +25,7 @@ Also want to showcase how not following best practices at dev/devops level might
 ![Check the vulnerabilities in IDE](img/checkov_plugin.png "Check the vulnerabilities in IDE")
 > Example files for terraform,yaml,secrets can be found in fake_commits folder. Please use as per your requirement.
 ### Review/CI phase (Persona: Dev/Devops Leads/Managers)
-1. Integrate your Github repo with Primsa Cloud Code Security module.
+1. Integrate your Github repo with Prisma Cloud Code Security module.
 2. Push the code to your branch and raise pull request
 3. The reviewers will be notified of misconfigurations/vulnerabilites in review process.This makes reviewers aware of the security issues in addition to coding issues.
 4. Code-checkins are gated by security as PC scan becomes one of the checks during CI process
